@@ -1,28 +1,36 @@
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
 
 
-
+function generatePassword(){
+  var length = parseInt(prompt("Please choose password length", "Enter numerical value between 8 - 128"));
+  if (Number.isNaN(length)){
+    alert("Please enter a numerical value");
+    return "";
+  }
+  if (length < 8) {
+      alert("Length of password must be at least 8 characters");
+      return "";
+  }
+  if (length > 128) {
+      alert("Password must be no longer than 128 characters");
+      return "";
+  }
+}
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  var length = prompt("Please choose password length", "Enter numerical value between 8 - 128");
-  if (length = "8" - "128") {
-      prompt("Please enter valid numerical range");
-        }
-  // var password = generatePassword();
-  // var passwordText = document.querySelector("#password");
+function writePassword(){
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
   
 
-  // passwordText.value = password;
+  passwordText.value = password;
 
 }
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);{
+generateBtn.addEventListener("click", writePassword);
   
-// }
+
 
