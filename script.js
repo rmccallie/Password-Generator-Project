@@ -14,6 +14,8 @@ function generatePassword(){
       alert("Password must be no longer than 128 characters");
       return "";
   }
+  var incLowercase = confirm("Would you like to include lowercase letters? []");
+  console.log("incLowercase", incLowercase);
 }
 
 // Assignment Code
