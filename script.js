@@ -15,7 +15,17 @@ function generatePassword(){
       return "";
   }
   var incLowercase = confirm("Would you like to include lowercase letters? []");
-  console.log("incLowercase", incLowercase);
+  console.log("lower case", incLowercase);
+  var incUppercase = confirm("Would you like to include uppercase letters? []");
+  console.log("upper case", incUppercase);
+  var incNumbers = confirm("Would you like to include numbers? []");
+  console.log("numbers", incNumbers);
+  var incSpecials = confirm("Would you like to include special characters? []");
+  console.log("special characters", incSpecials);
+  if (incLowercase == false && incUppercase == false && incNumbers == false && incSpecials == false){
+    alert("Please select at least one criteria");
+    return "";
+  }
 }
 
 // Assignment Code
