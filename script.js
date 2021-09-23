@@ -1,4 +1,7 @@
-
+var lowercase = "abcdefghijklmnopqrstuvwxyz"
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+var numbers = "0123456789"
+var specials = "?!@#$%^&*()"
 
 function generatePassword(){
   var length = parseInt(prompt("Please choose password length", "Enter numerical value between 8 - 128"));
@@ -7,25 +10,32 @@ function generatePassword(){
     return "";
   }
   if (length < 8) {
-      alert("Length of password must be at least 8 characters");
+      alert("Password must be 8 characters minimum");
       return "";
+
   }
   if (length > 128) {
-      alert("Password must be no longer than 128 characters");
+      alert("Password must be 128 characters maximum");
       return "";
+      
   }
-  var incLowercase = confirm("Would you like to include lowercase letters? []");
+  var incLowercase = confirm("Would you like to include lowercase letters? [OK/Cancel]");
   console.log("lower case", incLowercase);
-  var incUppercase = confirm("Would you like to include uppercase letters? []");
+  var incUppercase = confirm("Would you like to include uppercase letters? [OK/Cancel]");
   console.log("upper case", incUppercase);
-  var incNumbers = confirm("Would you like to include numbers? []");
+  var incNumbers = confirm("Would you like to include numbers? [OK/Cancel]");
   console.log("numbers", incNumbers);
-  var incSpecials = confirm("Would you like to include special characters? []");
+  var incSpecials = confirm("Would you like to include special characters? [OK/Cancel]");
   console.log("special characters", incSpecials);
-  if (incLowercase == false && incUppercase == false && incNumbers == false && incSpecials == false){
+  if (!incLowercase && !incUppercase && !incNumbers && !incSpecials){
     alert("Please select at least one criteria");
     return "";
   }
+  if (incLowercase || incUppercase || incNumbers || incSpecials){
+    
+  }
+    
+  
 }
 
 // Assignment Code
@@ -35,6 +45,7 @@ var generateBtn = document.querySelector("#generate");
 function writePassword(){
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+
   
 
   passwordText.value = password;
